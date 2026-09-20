@@ -1,42 +1,60 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import "tailwindcss";
+@theme { 
+  --color-leaf-50: #f3faf3;
+  --color-leaf-100: #e5f5e6;
+  --color-leaf-200: #c7e9c9;
+  --color-leaf-300: #a3d9a7;
+  --color-leaf-400: #6fc477;
+  --color-leaf-500: #3aa34b;
+  --color-leaf-600: #2f833d;
+  --color-leaf-700: #276935;
+  --color-leaf-800: #21542d;
+  --color-leaf-900: #1b4527;
+
+  --color-soil-50: #f7f3f0;
+  --color-soil-100: #efe7df;
+  --color-soil-200: #d9c8ba;
+  --color-soil-300: #c1a892;
+  --color-soil-400: #9f7e61;
+  --color-soil-500: #7e5a3b;
+  --color-soil-600: #67482f;
+  --color-soil-700: #523a27;
+  --color-soil-800: #443225;
+  --color-soil-900: #35281e;
+
+  --color-sand-50: #faf8f4;
+  --color-sand-100: #f5f0e6;
+  --color-sand-200: #ebe0cd;
+  --color-sand-300: #dfc8a9;
+  --color-sand-400: #cfb07f;
+  --color-sand-500: #b28c4b;
+  --color-sand-600: #8f6e35;
+  --color-sand-700: #76592b;
+  --color-sand-800: #624a26;
+  --color-sand-900: #4f3b1f;
+
+  --color-accent: #2ec4b6;
+
+  /* Font */
+  --font-sans: 'Ranade', ui-sans-serif, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+
+  /* Shadow token */
+  --shadow-subtle: 0 1px 2px rgba(0,0,0,0.05);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+html, body, #root {
+  height: 100%;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  @apply bg-[#F5EFE6] text-soil-900 font-sans antialiased;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* Dark mode base */
+/* (dark mode removed) */
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-md bg-accent px-4 py-2 text-white font-medium shadow-subtle hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-accent/50 active:opacity-80 transition;
 }
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.btn-link {
+  @apply text-leaf-700 hover:text-leaf-800 underline-offset-2 hover:underline;
 }
